@@ -2,7 +2,7 @@ using Foster.Framework;
 
 namespace Platformer;
 
-public class Controls
+public static class Controls
 {
     public static readonly VirtualStick Move = new();
 

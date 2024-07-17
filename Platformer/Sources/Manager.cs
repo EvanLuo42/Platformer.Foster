@@ -16,6 +16,7 @@ public class Manager : Module
         Controls.Init();
         _world.AddSystem(new SpriteSystem(_world));
         _world.AddSystem(new MovementSystem(_world));
+        _world.AddSystem(new GravitySystem(_world));
         var entity1 = _world.CreateEntity();
         entity1.AddComponent(new SpriteComponent(_batcher));
         entity1.AddComponent(new PositionComponent(20, 20));
