@@ -1,0 +1,3 @@
+[submodule "Foster"]
+	path = Foster
+	url = git@github.com:FosterFramework/Foster.git

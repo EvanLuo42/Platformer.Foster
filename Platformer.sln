@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platformer", "Platformer\Platformer.csproj", "{66990D27-96AD-4D5F-9764-7E5530EE10BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foster.Framework", "Foster\Framework\Foster.Framework.csproj", "{53330D9B-AA94-4EAF-A2BE-F4A6D0F00A6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66990D27-96AD-4D5F-9764-7E5530EE10BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66990D27-96AD-4D5F-9764-7E5530EE10BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66990D27-96AD-4D5F-9764-7E5530EE10BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66990D27-96AD-4D5F-9764-7E5530EE10BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53330D9B-AA94-4EAF-A2BE-F4A6D0F00A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53330D9B-AA94-4EAF-A2BE-F4A6D0F00A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53330D9B-AA94-4EAF-A2BE-F4A6D0F00A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53330D9B-AA94-4EAF-A2BE-F4A6D0F00A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
