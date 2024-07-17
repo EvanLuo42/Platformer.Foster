@@ -4,16 +4,14 @@ using Platformer.ECS;
 
 namespace Platformer.Systems;
 
-public class MovementSystem(World world) : ECS.System(world)
+public class MovementSystem(World world) : ECS.System
 {
-    private readonly World _world = world;
-
     private const float MaxSpeed = 300;
     private const float Acceleration = 10;
 
     public override void Update()
     {
-        foreach (var entity in _world.FindEntitiesByComponents(typeof(PositionComponent), typeof(VelocityComponent)))
+        foreach (var entity in world.FindEntitiesByComponents(typeof(PositionComponent), typeof(VelocityComponent)))
         {
             var positionComponent = entity.GetComponent<PositionComponent>();
             var velocityComponent = entity.GetComponent<VelocityComponent>();
