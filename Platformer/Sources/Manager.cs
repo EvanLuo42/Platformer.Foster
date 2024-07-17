@@ -13,10 +13,13 @@ public class Manager : Module
     public override void Startup()
     {
         base.Startup();
+        Controls.Init();
         _world.AddSystem(new SpriteSystem(_world));
+        _world.AddSystem(new MovementSystem(_world));
         var entity1 = _world.CreateEntity();
         entity1.AddComponent(new SpriteComponent(_batcher));
         entity1.AddComponent(new PositionComponent(20, 20));
+        entity1.AddComponent<VelocityComponent>();
     }
 
     public override void Update()
@@ -29,5 +32,7 @@ public class Manager : Module
     {
         Graphics.Clear(0x44aa77);
         _world.Render();
+        _batcher.Render();
+        _batcher.Clear();
     }
 }
