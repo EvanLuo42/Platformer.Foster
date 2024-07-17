@@ -13,7 +13,7 @@ public class SpriteSystem(World world) : ECS.System
         {
             var spriteComponent = entity.GetComponent<SpriteComponent>();
             var positionComponent = entity.GetComponent<PositionComponent>();
-            spriteComponent.Batcher.Circle(new Circle(positionComponent.Position, 64), 16, Color.White);
+            spriteComponent.Batcher.Rect(positionComponent.Position, new Vector2(100, 100), Color.White);
         }
     }
 }

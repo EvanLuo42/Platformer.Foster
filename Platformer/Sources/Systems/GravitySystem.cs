@@ -5,14 +5,18 @@ namespace Platformer.Systems;
 
 public class GravitySystem(World world) : ECS.System
 {
-    private const float Gravity = 10;
-
     public override void Update()
     {
-        foreach (var entity in world.FindEntitiesByComponents(typeof(VelocityComponent)))
+        foreach (var entity in world.FindEntitiesByComponents(typeof(VelocityComponent), typeof(GravityComponent)))
         {
             var velocityComponent = entity.GetComponent<VelocityComponent>();
-            velocityComponent.Velocity.Y += Gravity;
+            var gravityComponent = entity.GetComponent<GravityComponent>();
+            velocityComponent.Velocity.Y += gravityComponent.Gravity;
         }
+    }
+
+    public override float Priority()
+    {
+        return 2;
     }
 }

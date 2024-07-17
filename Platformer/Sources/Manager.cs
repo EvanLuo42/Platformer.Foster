@@ -15,12 +15,26 @@ public class Manager : Module
         base.Startup();
         Controls.Init();
         _world.AddSystem(new SpriteSystem(_world));
-        _world.AddSystem(new MovementSystem(_world));
+        _world.AddSystem(new ControlSystem(_world));
         _world.AddSystem(new GravitySystem(_world));
+        _world.AddSystem(new CollisionSystem(_world));
+        _world.AddSystem(new MovementSystem(_world));
+        _world.AddSystem(new JumpSystem(_world));
         var entity1 = _world.CreateEntity();
         entity1.AddComponent(new SpriteComponent(_batcher));
         entity1.AddComponent(new PositionComponent(20, 20));
-        entity1.AddComponent<VelocityComponent>();
+        entity1.AddComponent(new VelocityComponent(maxSpeed: 12, acceleration: 0.5f));
+        entity1.AddComponent(new GravityComponent());
+        entity1.AddComponent(new RigidBodyComponent());
+        entity1.AddComponent(new BoxColliderComponent(100, 100));
+        entity1.AddComponent(new JumpComponent());
+        for (var i = 0; i < 20; i++)
+        {
+            var entity = _world.CreateEntity();
+            entity.AddComponent(new SpriteComponent(_batcher));
+            entity.AddComponent(new PositionComponent(20 + i * 100, 500));
+            entity.AddComponent(new BoxColliderComponent(100, 100));
+        }
     }
 
     public override void Update()

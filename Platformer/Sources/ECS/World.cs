@@ -15,6 +15,7 @@ public class World
     public void AddSystem(System system)
     {
         _systems.Add(system);
+        _systems.Sort((x, y) => x.Priority().CompareTo(y.Priority()));
     }
 
     public void Update()
@@ -35,10 +36,7 @@ public class World
 
     public IEnumerable<Entity> FindEntitiesByComponents(params Type[] components)
     {
-        return
-            from entity in _entities
-            let hasComponents = components.Aggregate(false,
-                (current, component) => current && entity.HasComponent(component))
-            select entity;
+        return _entities.Where(entity => components.Aggregate(true,
+            (current, component) => current && entity.HasComponent(component)));
     }
 }
